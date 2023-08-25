@@ -1,4 +1,4 @@
-package edu.pw2.partida;
+package edu.pw2.partidas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Formulário de Registro de Partida</h1>
+    <form th:action="@{/partidas/cadastrar}" method="get">
+        <label>Local:</label>
+        <input id="local" name="local" type="text"><br>
+        <label>Inicio:</label>
+        <input id="inicio" name="inicio" type="datetime-local"><br>
+        <label>Fim:</label>
+        <input id="fim" name="fim" type="datetime-local"><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
