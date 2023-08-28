@@ -22,7 +22,7 @@ public class PartidaController{
         Partida partida = new Partida(dados);
         long duracaoEmMinutos = partida.calcDuracao();
         model.addAttribute("partida", partida);
-        model.addAttribute("duraçãoEmMinutos",duracaoEmMinutos);
+        model.addAttribute("duracaoEmMinutos",duracaoEmMinutos);
         return "partida/exibir";
     }
 }
