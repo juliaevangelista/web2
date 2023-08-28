@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.pw2.partidas.model.Partida;
 import edu.pw2.partidas.model.PartidaDados;
@@ -14,12 +15,14 @@ import edu.pw2.partidas.model.PartidaDados;
 public class PartidaController{
     @GetMapping
     public String loadPartidaForm(){
-        return "cadastrar";
+        return "partida/cadastro";
     }
-    @GetMapping("/cadastrar")
+    @PostMapping
     public String salvarPartida(PartidaDados dados, Model model){
-        Partida pa = new Partida(dados);
-        model.addAttribute("partida", pa);
-        return "partidas/exibir";
+        Partida partida = new Partida(dados);
+        long duracaoEmMinutos = partida.calcDuracao();
+        model.addAttribute("partida", partida);
+        model.addAttribute("duraçãoEmMinutos",duracaoEmMinutos);
+        return "partida/exibir";
     }
 }

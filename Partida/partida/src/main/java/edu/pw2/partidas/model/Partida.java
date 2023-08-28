@@ -37,9 +37,9 @@ public class Partida {
         this.fim = fim;
     }
 
-    public int calcDuracao(){
-        Duration duracao = Duration.between(inicio, fim);
-        return (int) duracao.getSeconds();
+    public long calcDuracao() {
+        Duration duration = Duration.between(inicio, fim);
+        return duration.toMinutes();
     }
     @Override
     public String toString() {
